@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 100px);
+  grid-template-rows: repeat(5, 100px);
+  grid-gap: 1px;
+}
+
+.calendar div {
+  display: flex;
+  counter-increment: counter;
+  border: 1px solid black;
+  background-color: #eeeeee;
+  transition: 0.5s; 
+}
+
+.calendar div:hover {
+  cursor: pointer;
+  background-color: pink;
+  transform: translateY(-20px); 
+}
+
+.calendar div::after {
+  content: counter(counter);
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  margin: auto; 
+}
+
+.calendar-tue div:first-child {
+  grid-column-start: 2; 
+}
